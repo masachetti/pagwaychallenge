@@ -1,0 +1,24 @@
+# Requisitos
+
+- Uma tela para adição/processamento de transações.
+  - Form dividido em duas seções: Dados da transação e Dados do Cartão.
+  - Dados da transação:
+    - Input de valor estilizado para representação monetária.
+    - Input de descrição, tipo texto.
+  - Dados do cartão:
+    - Input de nome, tipo texto.
+    - Input do número do cartão, tipo texto restrito apenas para números.
+    - Input da validade. Datepicker de mes+ano.
+    - Input do CVV. Tipo texto restrito apenas para números e de tamanho limitado.
+  - Botão para submissão do form para processamento da transação.
+    - POST Request para o back-end contendo os dados do formulário.
+  - Popup para apresentação da resposta do servidor sobre o processamento da transação.
+- Uma tela para listagem de transações e apresentação dos saldos (liquidados e previstos).
+  - Apresentar no topo da página o total do saldo liquidado e previsto.
+    - Dado obtido por um GET request no endpoint de saldo.
+  - Uma tabela contendo a lista de transações.
+    - Dado obtido por um GET request no endpoint de transacao.
+    - Cabeçalho da tabela com botão para mudar a ordenação dos itens.
+  - Paginação.
+    - Inpuct tipo select para selecionar quantos itens mostrar por página.
+    - Botões de paginação: Primeira pagina, ultima pagina, por númeração, próxima e anterior.
