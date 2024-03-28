@@ -39,3 +39,21 @@ Algumas ressalvas serão tomadas para a facilitar e agilizar o processo:
   - A página inicial será composta apenas por um componente de navegação afim de encaminhar para as rotas do desafio e tornar mais fácil o acesso.
 
 Além disso, o desafio será primeiramente feito em Angular 12 para depois ser reescrito em Angular 14.
+
+## Mock do Back-End
+
+Estarei utilizando o JSON-Server para realizar o mock do Back-End. Para tal, criei um arquivo JSON com dados falsos contendo os seguintes dados:
+
+- transacoes:
+  - Um array especificando as transacoes do cliente.
+  - Cada transação possui: `valor`, `descricao`, `nomePortadorCartao`, `numeroCartao`, `validadeCartao`, `codigoSegurancaCartao` e `recebiveis` onde:
+    - `valor` é dado em centavos
+    - `numeroCartao` representa são apenas os 4 últimos digitos do cartão
+    - `validadeCartao` é dado no formato MM/YYYY
+    - `recebiveis` é um array vazio ou de tamanho 1 contendo `status`, `dataPagamento` e `valorLiquido` onde:
+      - `status` pode ser "Pago" ou "Pendente".
+      - `dataPagamento` é dado em timestamp.
+      - `valorLiquido` é dado em centavos.
+- saldo:
+  - Um objeto contendo `liquidado` e `pendente` representando os respectivos tipos de saldo.
+  - Ambos os valores são dados em centavos.
