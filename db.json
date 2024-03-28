@@ -1,0 +1,326 @@
+{
+    "saldo": {
+      "liquidado": 540386,
+      "pendente": 619563
+    }, 
+    "transacoes": [
+        {
+          "valor": 44324,
+          "descricao": "et irure aliquip aute commodominimpariatur ut qui",
+          "nomePortadorCartao": "Mary Ingram",
+          "numeroCartao": 2192,
+          "validadeCartao": "11/2026",
+          "codigoSegurancaCartao": 854,
+          "recebiveis": []
+        },
+        {
+          "valor": 336740,
+          "descricao": "fugiatLorem voluptatedeserunt id consectetur reprehenderit",
+          "nomePortadorCartao": "Garrett Garza",
+          "numeroCartao": 6510,
+          "validadeCartao": "12/2024",
+          "codigoSegurancaCartao": 236,
+          "recebiveis": []
+        },
+        {
+          "valor": 75621,
+          "descricao": "ut commodoad in sedex minimutveniamoccaecat adipisicing sunt",
+          "nomePortadorCartao": "Agnes Greer",
+          "numeroCartao": 7472,
+          "validadeCartao": "02/2031",
+          "codigoSegurancaCartao": 607,
+          "recebiveis": [
+            {
+              "status": "Pago",
+              "dataPagamento": 149958170,
+              "valorLiquido": 122975
+            }
+          ]
+        },
+        {
+          "valor": 678756,
+          "descricao": "nisi commodoirureullamco id Lorem dolore dolore",
+          "nomePortadorCartao": "Ethan Jenkins",
+          "numeroCartao": 5063,
+          "validadeCartao": "12/2033",
+          "codigoSegurancaCartao": 626,
+          "recebiveis": []
+        },
+        {
+          "valor": 545009,
+          "descricao": "cupidatatipsum anim veniam reprehenderit",
+          "nomePortadorCartao": "Ethel Estrada",
+          "numeroCartao": 1514,
+          "validadeCartao": "10/2033",
+          "codigoSegurancaCartao": 340,
+          "recebiveis": []
+        },
+        {
+          "valor": 528524,
+          "descricao": "adipisicingcillum voluptate laboris irure ex",
+          "nomePortadorCartao": "Jennie Owen",
+          "numeroCartao": 4027,
+          "validadeCartao": "07/2024",
+          "codigoSegurancaCartao": 125,
+          "recebiveis": []
+        },
+        {
+          "valor": 422733,
+          "descricao": "Lorem utindolor Loremlaboris dolor laborum",
+          "nomePortadorCartao": "Daisy Erickson",
+          "numeroCartao": 7649,
+          "validadeCartao": "04/2028",
+          "codigoSegurancaCartao": 813,
+          "recebiveis": [
+            {
+              "status": "Pago",
+              "dataPagamento": 1412613388,
+              "valorLiquido": 413252
+            }
+          ]
+        },
+        {
+          "valor": 986946,
+          "descricao": "dolor voluptate consequatlaborum in Duis mollit ex",
+          "nomePortadorCartao": "Mamie Nunez",
+          "numeroCartao": 5193,
+          "validadeCartao": "10/2024",
+          "codigoSegurancaCartao": 286,
+          "recebiveis": [
+            {
+              "status": "Pago",
+              "dataPagamento": 1706994634,
+              "valorLiquido": 515935
+            }
+          ]
+        },
+        {
+          "valor": 581414,
+          "descricao": "enim qui dolor dolor mollitmagna eu non laborum",
+          "nomePortadorCartao": "Alberta Mack",
+          "numeroCartao": 3128,
+          "validadeCartao": "04/2029",
+          "codigoSegurancaCartao": 432,
+          "recebiveis": [
+            {
+              "status": "Pendente",
+              "dataPagamento": 1050755779,
+              "valorLiquido": 489397
+            }
+          ]
+        },
+        {
+          "valor": 939933,
+          "descricao": "tempor ut labore adipisicing doid fugiat",
+          "nomePortadorCartao": "Trevor Rhodes",
+          "numeroCartao": 8058,
+          "validadeCartao": "08/2033",
+          "codigoSegurancaCartao": 913,
+          "recebiveis": []
+        },
+        {
+          "valor": 140426,
+          "descricao": "dolore occaecat culpa ex nonin Ut mollit",
+          "nomePortadorCartao": "Francis Gilbert",
+          "numeroCartao": 2390,
+          "validadeCartao": "07/2027",
+          "codigoSegurancaCartao": 625,
+          "recebiveis": []
+        },
+        {
+          "valor": 761927,
+          "descricao": "Excepteur ut magna adipisicingincididunt occaecat",
+          "nomePortadorCartao": "Cody Hill",
+          "numeroCartao": 9763,
+          "validadeCartao": "09/2025",
+          "codigoSegurancaCartao": 402,
+          "recebiveis": []
+        },
+        {
+          "valor": 964253,
+          "descricao": "incididuntea quis veniam etfugiat irure Ut exercitation",
+          "nomePortadorCartao": "Ruby Porter",
+          "numeroCartao": 2676,
+          "validadeCartao": "02/2031",
+          "codigoSegurancaCartao": 356,
+          "recebiveis": []
+        },
+        {
+          "valor": 644376,
+          "descricao": "cillum anim cupidatatut culpa amet dolore",
+          "nomePortadorCartao": "Elijah Padilla",
+          "numeroCartao": 1790,
+          "validadeCartao": "09/2027",
+          "codigoSegurancaCartao": 652,
+          "recebiveis": [
+            {
+              "status": "Pago",
+              "dataPagamento": 99885326,
+              "valorLiquido": 23096
+            }
+          ]
+        },
+        {
+          "valor": 1155,
+          "descricao": "in Lorem eu veniam etdeserunt voluptate esse",
+          "nomePortadorCartao": "Owen Warner",
+          "numeroCartao": 1649,
+          "validadeCartao": "05/2033",
+          "codigoSegurancaCartao": 400,
+          "recebiveis": []
+        },
+        {
+          "valor": 67024,
+          "descricao": "amet pariatur eu Ut exercitationsunt mollit enim eiusmod nulla",
+          "nomePortadorCartao": "Susan Carter",
+          "numeroCartao": 6449,
+          "validadeCartao": "10/2032",
+          "codigoSegurancaCartao": 822,
+          "recebiveis": []
+        },
+        {
+          "valor": 767839,
+          "descricao": "aliqua nostrud dolor quis culpaenim est in minim Excepteur",
+          "nomePortadorCartao": "Lucy Morgan",
+          "numeroCartao": 8352,
+          "validadeCartao": "04/2024",
+          "codigoSegurancaCartao": 667,
+          "recebiveis": [
+            {
+              "status": "Pago",
+              "dataPagamento": 42545709,
+              "valorLiquido": 555065
+            }
+          ]
+        },
+        {
+          "valor": 41682,
+          "descricao": "do eiusmod consectetur laboris laboreipsum exercitation Duis cupidatat nulla",
+          "nomePortadorCartao": "Brian Osborne",
+          "numeroCartao": 5000,
+          "validadeCartao": "09/2024",
+          "codigoSegurancaCartao": 475,
+          "recebiveis": []
+        },
+        {
+          "valor": 398994,
+          "descricao": "nulla pariaturdeserunt laboris aliquip quis dolore",
+          "nomePortadorCartao": "Minnie Park",
+          "numeroCartao": 1065,
+          "validadeCartao": "08/2032",
+          "codigoSegurancaCartao": 145,
+          "recebiveis": []
+        },
+        {
+          "valor": 606550,
+          "descricao": "consequat exercitation aliqua nostrud enim",
+          "nomePortadorCartao": "Claudia Ross",
+          "numeroCartao": 8884,
+          "validadeCartao": "09/2026",
+          "codigoSegurancaCartao": 707,
+          "recebiveis": []
+        },
+        {
+          "valor": 885712,
+          "descricao": "commodo DuisDuis in pariatur euproident pariatur",
+          "nomePortadorCartao": "Leona Hall",
+          "numeroCartao": 6957,
+          "validadeCartao": "12/2028",
+          "codigoSegurancaCartao": 527,
+          "recebiveis": []
+        },
+        {
+          "valor": 771425,
+          "descricao": "sed culpa Duis pariaturin do doloresit ullamco est tempor",
+          "nomePortadorCartao": "Cory Fernandez",
+          "numeroCartao": 9678,
+          "validadeCartao": "07/2031",
+          "codigoSegurancaCartao": 268,
+          "recebiveis": []
+        },
+        {
+          "valor": 751842,
+          "descricao": "fugiat idnisi ad indo ex deserunt consequat",
+          "nomePortadorCartao": "Beulah Greene",
+          "numeroCartao": 4193,
+          "validadeCartao": "03/2029",
+          "codigoSegurancaCartao": 729,
+          "recebiveis": [
+            {
+              "status": "Pendente",
+              "dataPagamento": 1122500972,
+              "valorLiquido": 824752
+            }
+          ]
+        },
+        {
+          "valor": 94674,
+          "descricao": "eiusmod sint deserunt exeiusmodveniam pariatur",
+          "nomePortadorCartao": "Eleanor Watts",
+          "numeroCartao": 6079,
+          "validadeCartao": "12/2030",
+          "codigoSegurancaCartao": 270,
+          "recebiveis": [
+            {
+              "status": "Pendente",
+              "dataPagamento": 113801439,
+              "valorLiquido": 759630
+            }
+          ]
+        },
+        {
+          "valor": 468039,
+          "descricao": "laborisaute id culpadeserunt dolor sittempor Lorem minim",
+          "nomePortadorCartao": "Aiden Flowers",
+          "numeroCartao": 7419,
+          "validadeCartao": "05/2027",
+          "codigoSegurancaCartao": 485,
+          "recebiveis": []
+        },
+        {
+          "valor": 204467,
+          "descricao": "ullamco in velit laborumsint etex quis ut enim",
+          "nomePortadorCartao": "Marcus Craig",
+          "numeroCartao": 9699,
+          "validadeCartao": "04/2031",
+          "codigoSegurancaCartao": 132,
+          "recebiveis": []
+        },
+        {
+          "valor": 590938,
+          "descricao": "irureincididunt adipisicing in irure non",
+          "nomePortadorCartao": "Jason Barton",
+          "numeroCartao": 1105,
+          "validadeCartao": "12/2027",
+          "codigoSegurancaCartao": 397,
+          "recebiveis": []
+        },
+        {
+          "valor": 613498,
+          "descricao": "laborum Duis et cillum laboreipsum in anim enim",
+          "nomePortadorCartao": "Rhoda Rodriguez",
+          "numeroCartao": 5843,
+          "validadeCartao": "04/2026",
+          "codigoSegurancaCartao": 772,
+          "recebiveis": []
+        },
+        {
+          "valor": 496446,
+          "descricao": "dolorconsectetur sit deseruntExcepteur nulla",
+          "nomePortadorCartao": "Wayne Morton",
+          "numeroCartao": 7905,
+          "validadeCartao": "04/2031",
+          "codigoSegurancaCartao": 736,
+          "recebiveis": []
+        },
+        {
+          "valor": 812368,
+          "descricao": "ad aliquipin ipsum id eiusmodqui esse nisi con",
+          "nomePortadorCartao": "Dale Swanson",
+          "numeroCartao": 5833,
+          "validadeCartao": "01/2032",
+          "codigoSegurancaCartao": 150,
+          "recebiveis": []
+        }
+      ]
+  }
