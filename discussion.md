@@ -38,4 +38,4 @@ Algumas ressalvas serão tomadas para a facilitar e agilizar o processo:
 - Página inicial:
   - A página inicial será composta apenas por um componente de navegação afim de encaminhar para as rotas do desafio e tornar mais fácil o acesso.
 
-Além disso, o desafio será primeiramente feito em Angular 12 para depois ser reescrito em Angular 17.
+Além disso, o desafio será primeiramente feito em Angular 12 para depois ser reescrito em Angular 14.
