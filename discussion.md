@@ -22,3 +22,20 @@
   - Paginação.
     - Inpuct tipo select para selecionar quantos itens mostrar por página.
     - Botões de paginação: Primeira pagina, ultima pagina, por númeração, próxima e anterior.
+
+# Diagramação da estrutura das páginas
+
+![Diagrama das páginas](./diagram.png)
+
+# Ressalvas
+
+Algumas ressalvas serão tomadas para a facilitar e agilizar o processo:
+
+- Mock do Back-End:
+  - Será utilizado a biblioteca JSON-Server para mockar os endpoints do back-end afim de prover um mais realismo ao desafio.
+- Headers e Footers:
+  - Apesar de inseridos na diagramação, penso em não inserir no código final para poder focar mais na resolução do problema.
+- Página inicial:
+  - A página inicial será composta apenas por um componente de navegação afim de encaminhar para as rotas do desafio e tornar mais fácil o acesso.
+
+Além disso, o desafio será primeiramente feito em Angular 12 para depois ser reescrito em Angular 17.
