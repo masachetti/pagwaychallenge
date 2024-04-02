@@ -19,8 +19,17 @@
   - Uma tabela contendo a lista de transações.
     - Dado obtido por um GET request no endpoint de transacao.
     - Cabeçalho da tabela com botão para mudar a ordenação dos itens.
+    - Apresentar colunas de:
+      - Valor: Representação monetária
+      - Descrição: String com mecanismo para visualização de textos grandes.
+      - Nome
+      - Numero cartao (últimos 4 digitos)
+      - Status: Pago ou Pendente
+      - Data de pagamento do recebivel
+      - Valor liquidado: Representação monetária
+    - (?) Colocar algum mecanismo para representar se houve ou nao recebiveis.
   - Paginação.
-    - Inpuct tipo select para selecionar quantos itens mostrar por página.
+    - Input tipo select para selecionar quantos itens mostrar por página.
     - Botões de paginação: Primeira pagina, ultima pagina, por númeração, próxima e anterior.
 
 # Diagramação da estrutura das páginas
