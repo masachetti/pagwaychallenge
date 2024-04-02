@@ -8,7 +8,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      rotate: ['group-focus'],
+      overflow: ['focus']
+    },
   },
   plugins: [],
 }
