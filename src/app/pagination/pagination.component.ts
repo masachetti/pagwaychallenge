@@ -9,17 +9,32 @@ import { CS } from 'src/utils/cs';
 })
 export class PaginationComponent extends CS implements OnChanges {
   @Input() paginateInfo: PaginateInfo | undefined;
+  @Input() pageNumber: number | undefined;
 
-  pages: Array<number> | undefined;
+  pages: Array<number> = [];
+  shouldRenderFirstButton = false;
+  shouldRenderLastButton = false;
 
   constructor() {
     super();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const info = changes['paginateInfo'].currentValue;
-    if (info) {
-      this.pages = Array.from({ length: info.pages }, (_, i) => i + 1);
+    if ('paginateInfo' in changes) {
+      const info = changes['paginateInfo'].currentValue as PaginateInfo;
+      if (info) {
+        const currentPage = this.pageNumber ?? 1;
+        this.pages = [];
+        Array.from({ length: 5 }, (_, i) => i - 2).forEach((v) => {
+          const pNumber = currentPage + v;
+          if (pNumber >= info.first && pNumber <= info.last) {
+            this.pages.push(pNumber);
+          }
+        });
+
+        this.shouldRenderFirstButton = !this.pages.includes(info.first);
+        this.shouldRenderLastButton = !this.pages.includes(info.last);
+      }
     }
   }
 }
