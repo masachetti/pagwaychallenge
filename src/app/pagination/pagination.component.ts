@@ -11,16 +11,20 @@ import { CS } from 'src/utils/cs';
 export class PaginationComponent extends CS implements OnChanges {
   @Input() paginateInfo: PaginateInfo | undefined;
   @Input() pageNumber: number | undefined;
+  @Input() perPage: number | undefined;
 
   pages: Array<number> = [];
   shouldRenderFirstButton = false;
   shouldRenderLastButton = false;
+
+  perPageOptions: Array<number> = [100, 50, 30, 10];
 
   constructor(private router: Router) {
     super();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
     if ('paginateInfo' in changes) {
       const info = changes['paginateInfo'].currentValue as PaginateInfo;
       if (info) {
@@ -37,10 +41,19 @@ export class PaginationComponent extends CS implements OnChanges {
         this.shouldRenderLastButton = !this.pages.includes(info.last);
       }
     }
+    if ('perPage' in changes) {
+      const _perPage = changes['perPage'].currentValue;
+      if (typeof _perPage === 'number') {
+        if (!this.perPageOptions.includes(_perPage)) {
+          this.perPageOptions = [...this.perPageOptions, _perPage].sort(
+            (a, b) => a - b
+          );
+        }
+      }
+    }
   }
 
   changePerPageQueryParameter(value: string) {
-    console.log(value);
     this.router.navigate(['/transacoes'], {
       queryParams: { per_page: parseInt(value) },
       queryParamsHandling: 'merge',
