@@ -13,7 +13,7 @@ export class TransacoesComponent implements OnInit {
   page: number;
   perPage: number;
   paginateInfo: PaginateInfo | undefined;
-  transactions: Array<Transaction> | undefined;
+  transactions: Array<Transaction> = [];
 
   constructor(
     private transaction: TransactionService,

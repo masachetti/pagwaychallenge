@@ -1,5 +1,7 @@
 <div class="flex flex-col gap-10">
-  <app-transactions-table></app-transactions-table>
+  <app-transactions-table
+    [transactions]="transactions"
+  ></app-transactions-table>
   <app-pagination
     [paginateInfo]="paginateInfo"
     [pageNumber]="page"
