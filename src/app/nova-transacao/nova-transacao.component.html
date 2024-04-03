@@ -1,1 +1,99 @@
-<p>nova-transacao works!</p>
+<div
+  class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md min-w-1/2"
+>
+  <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">
+    Nova Transação
+  </h1>
+  <form action="#" class="w-full">
+    <div class="mb-4 w-full">
+      <label
+        for="value"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Valor Solicitado:</label
+      >
+      <app-monetary-input
+        name="value"
+        className="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+      ></app-monetary-input>
+    </div>
+    <div class="mb-4 w-full">
+      <label
+        for="description"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Descição:</label
+      >
+      <input
+        type="text"
+        id="description"
+        name="description"
+        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        placeholder="Descreva o motivo dessa solicitação."
+        required
+      />
+    </div>
+
+    <div class="w-full border-t border-gray-600 my-8 border-opacity-50"></div>
+
+    <div class="mb-4 w-full">
+      <label
+        for="card-name"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Nome do Titular do Cartão:</label
+      >
+      <input
+        type="text"
+        id="card-name"
+        name="card-name"
+        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        placeholder="Digite o nome do titular como aparece no cartão."
+        required
+      />
+    </div>
+    <div class="mb-4 w-full">
+      <label
+        for="card-number"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Número do Cartão:</label
+      >
+      <input
+        type="text"
+        id="card-number"
+        name="card-number"
+        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        placeholder="Digite o número do cartão."
+        required
+      />
+    </div>
+    <div class="mb-4 w-full">
+      <label
+        for="card-date"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Validade do Cartão:</label
+      >
+      <input
+        type="text"
+        id="card-date"
+        name="card-date"
+        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        placeholder="Digite o número do cartão."
+        required
+      />
+    </div>
+    <div class="mb-4 w-full">
+      <label
+        for="card-code"
+        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        >Código de Segurança (CVV):</label
+      >
+      <input
+        type="text"
+        id="card-code"
+        name="card-code"
+        class="shadow-sm rounded-md w-full px-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        placeholder="CVV"
+        required
+      />
+    </div>
+    <!-- <button onclick="alert("hello")" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Login</button> -->
+  </form>
+</div>
