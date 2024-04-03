@@ -2,7 +2,7 @@
   <div class="flex justify-center items-center gap-5">
     <label
       for="per-page"
-      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      class="mb-2 text-sm font-medium text-gray-700 dark:text-white"
     >
       Qnt. por página:</label
     >
@@ -24,10 +24,10 @@
   </div>
 
   <nav aria-label="Page navigation">
-    <ul class="flex">
+    <ul class="flex items-center">
       <li>
         <a
-          class="relative block text-center py-1.5 px-1.5 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          class="relative flex h-full items-center text-center py-1.5 px-1.5 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-700 hover:text-gray-700 hover:bg-gray-200 focus:shadow-none"
           tabindex="{{ paginateInfo?.prev ? 0 : -1 }}"
           [routerLink]="['/transacoes']"
           [queryParams]="{ page: paginateInfo?.prev }"
@@ -43,7 +43,7 @@
 
       <li *ngIf="shouldRenderFirstButton">
         <a
-          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-700 hover:text-gray-700 hover:bg-gray-200 focus:shadow-none"
           [routerLink]="['/transacoes']"
           [queryParams]="{ page: paginateInfo?.first }"
           queryParamsHandling="merge"
@@ -52,7 +52,7 @@
       </li>
       <li *ngIf="shouldRenderFirstButton">
         <span
-          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none rounded text-gray-800"
+          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none rounded text-gray-700"
           >...</span
         >
       </li>
@@ -60,7 +60,7 @@
         <a
           [class]="
             cs(
-              'relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none',
+              'relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-700 hover:text-gray-700 hover:bg-gray-200 focus:shadow-none',
               pageNumber === pNumber &&
                 'bg-blue-600 text-white hover:text-white hover:bg-blue-600 shadow-md'
             )
@@ -73,13 +73,13 @@
       </li>
       <li *ngIf="shouldRenderLastButton">
         <span
-          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none rounded text-gray-800"
+          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none rounded text-gray-700"
           >...</span
         >
       </li>
       <li *ngIf="shouldRenderLastButton">
         <a
-          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-700 hover:text-gray-700 hover:bg-gray-200 focus:shadow-none"
           [routerLink]="['/transacoes']"
           [queryParams]="{ page: paginateInfo?.last }"
           queryParamsHandling="merge"
@@ -88,7 +88,7 @@
       </li>
       <li>
         <a
-          class="relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+          class="relative flex h-full items-center py-1.5 px-1.5 border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-700 hover:text-gray-700 hover:bg-gray-200 focus:shadow-none"
           [routerLink]="['/transacoes']"
           [queryParams]="{ page: paginateInfo?.next }"
           queryParamsHandling="merge"
