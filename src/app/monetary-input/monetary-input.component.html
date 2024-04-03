@@ -1,0 +1,19 @@
+<div class="relative w-full" tabindex="0" (focus)="changeFocus()">
+  <input
+    [class]="cs('disabled:bg-white', className)"
+    disabled
+    [value]="value | currency : 'R$'"
+  />
+  <input
+    *ngIf="editingValue"
+    (blur)="removeFocus()"
+    type="text"
+    [name]="name"
+    [id]="name"
+    [class]="cs('absolute top-0 left-0', className)"
+    required
+    appNumbersOnly
+    #inputRef
+    [(ngModel)]="value"
+  />
+</div>
