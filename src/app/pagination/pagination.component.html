@@ -1,44 +1,22 @@
-<div class="flex justify-center">
-  <div>
+<div class="flex justify-between items-center px-2">
+  <div class="flex justify-center items-center gap-5">
     <label
       for="per-page"
       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
     >
-      Qnt. por página</label
+      Qnt. por página:</label
     >
     <select
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       name="per-page"
       id="per-page"
+      #perPage
+      (change)="changePerPageQueryParameter(perPage.value)"
     >
-      <span> Dropdown </span>
-      <ng-icon
-        name="MatChevronRight"
-        class="transform group-focus:rotate-90 transition-transform duration-200"
-      ></ng-icon>
-      <option>10</option>
-      <option>30</option>
-      <option>50</option>
-      <option>100</option>
-      <div
-        class="absolute shadow-lg -bottom-40 left-0 w-full h-max p-2 bg-white border border-zinc-200 rounded-lg flex flex-col gap-2"
-      >
-        <span
-          class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg"
-        >
-          <p>Light</p>
-        </span>
-        <span
-          class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg"
-        >
-          <p>Dark</p>
-        </span>
-        <span
-          class="flex flex-row gap-2 items-center hover:bg-zinc-100 p-2 rounded-lg"
-        >
-          <p>System</p>
-        </span>
-      </div>
+      <option value="10">10</option>
+      <option value="30">30</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
     </select>
   </div>
 

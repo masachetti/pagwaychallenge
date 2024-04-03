@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { PaginateInfo } from 'src/types/paginated';
 import { CS } from 'src/utils/cs';
 
@@ -15,7 +16,7 @@ export class PaginationComponent extends CS implements OnChanges {
   shouldRenderFirstButton = false;
   shouldRenderLastButton = false;
 
-  constructor() {
+  constructor(private router: Router) {
     super();
   }
 
@@ -36,5 +37,13 @@ export class PaginationComponent extends CS implements OnChanges {
         this.shouldRenderLastButton = !this.pages.includes(info.last);
       }
     }
+  }
+
+  changePerPageQueryParameter(value: string) {
+    console.log(value);
+    this.router.navigate(['/transacoes'], {
+      queryParams: { per_page: parseInt(value) },
+      queryParamsHandling: 'merge',
+    });
   }
 }
