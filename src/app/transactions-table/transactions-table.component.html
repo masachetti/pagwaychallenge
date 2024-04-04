@@ -8,7 +8,7 @@
       <tr>
         <th
           colspan="4"
-          class="text-center py-3 px-6 border-r-2 border-gray-400 border-opacity-50 rounded-xl"
+          class="text-center py-3 px-6 border-gray-400 border-opacity-50 rounded-xl"
         >
           Transação
         </th>
@@ -18,10 +18,7 @@
         <th scope="col" class="py-3 px-6">Nome</th>
         <th scope="col" class="py-3 px-6">Número do cartão</th>
         <th scope="col" class="py-3 px-6">Valor</th>
-        <th
-          scope="col"
-          class="py-3 px-6 border-r-2 border-gray-400 border-opacity-50"
-        >
+        <th scope="col" class="py-3 px-6 border-gray-400 border-opacity-40">
           Descrição
         </th>
         <th scope="col" class="py-3 px-6">Status</th>
@@ -39,28 +36,28 @@
         <td class="py-4 px-6">
           {{ transaction.valor * 100 | currency : "R$" }}
         </td>
-        <td class="py-4 px-6 border-r-2 border-gray-400 border-opacity-50">
+        <td class="py-4 px-6 border-r-2 border-gray-400 border-opacity-40">
           {{ transaction.descricao }}
         </td>
         <td class="py-4 px-6">
           {{
             transaction.recebiveis.length
               ? transaction.recebiveis[0].status
-              : "-"
+              : ""
           }}
         </td>
         <td class="py-4 px-6">
           {{
             transaction.recebiveis.length
               ? (transaction.recebiveis[0].dataPagamento | date : "shortDate")
-              : "-"
+              : ""
           }}
         </td>
         <td class="py-4 px-6">
           {{
             transaction.recebiveis.length
               ? (transaction.recebiveis[0].valorLiquido * 100 | currency : "R$")
-              : "-"
+              : ""
           }}
         </td>
       </tr>
