@@ -4,22 +4,30 @@ import { Paginated } from 'src/types/paginated';
 import { Transaction } from 'src/types/transaction';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TransactionService {
+  baseUrl = 'http://localhost:3000/';
+  transcationsUrl = this.baseUrl + 'transacoes';
 
-  baseUrl = "http://localhost:3000/"
-  transcationsUrl = this.baseUrl + "transacoes"
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   getTransactions(page: number, itemsByPage: number = 10) {
     return this.http.get<Paginated<Transaction>>(this.transcationsUrl, {
       params: {
         _page: page,
-        _per_page: itemsByPage
-      }
-    })
+        _per_page: itemsByPage,
+      },
+    });
+  }
+
+  newTransaction(transactionData: Transaction) {
+    this.http
+      .post(this.transcationsUrl, transactionData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .subscribe(() => alert('Transação enviada para o servidor!'));
   }
 }
