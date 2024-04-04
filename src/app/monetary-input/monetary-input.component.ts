@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { CS } from 'src/utils/cs';
 
 @Component({
@@ -9,6 +10,7 @@ import { CS } from 'src/utils/cs';
 export class MonetaryInputComponent extends CS implements OnInit {
   @Input() className = '';
   @Input() name = '';
+  @Input() fControl: FormControl = new FormControl();
 
   @ViewChild('inputRef', { read: ElementRef }) inputRef:
     | ElementRef<HTMLInputElement>
@@ -16,13 +18,8 @@ export class MonetaryInputComponent extends CS implements OnInit {
 
   editingValue = false;
 
-  _value = 0.0;
-  set value(newValue: string) {
-    console.log(newValue);
-    this._value = parseFloat(newValue) || 0.0;
-  }
   get value() {
-    return '' + this._value;
+    return '' + this.fControl.value;
   }
 
   constructor() {
