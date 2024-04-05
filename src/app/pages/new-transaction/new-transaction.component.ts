@@ -65,16 +65,24 @@ export class NewTransactionComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.transactionForm.valid) {
-      this.transactions.newTransaction({
-        valor: this.transactionValue.value,
-        descricao: this.description.value,
-        nomePortadorCartao: this.cardName.value,
-        codigoSegurancaCartao: this.cardCode.value,
-        numeroCartao: this.cardNumber.value,
-        validadeCartao: `${this.cardMonth.value}/${this.cardYear.value}`,
-        recebiveis: [],
-        id: '',
-      });
+      this.transactions
+        .newTransaction({
+          valor: this.transactionValue.value,
+          descricao: this.description.value,
+          nomePortadorCartao: this.cardName.value,
+          codigoSegurancaCartao: this.cardCode.value,
+          numeroCartao: this.cardNumber.value,
+          validadeCartao: `${this.cardMonth.value}/${this.cardYear.value}`,
+          recebiveis: [],
+        })
+        .subscribe((resp) => {
+          if (resp.status === 201) {
+            console.log('Works!', resp);
+          }
+          if (resp.status === 400) {
+            console.log('Mock error works', resp);
+          }
+        });
     }
   }
 }
