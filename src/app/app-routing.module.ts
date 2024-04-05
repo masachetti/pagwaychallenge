@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NovaTransacaoComponent } from './pages/nova-transacao/nova-transacao.component';
-import { TransacoesComponent } from './pages/transacoes/transacoes.component';
+import { NewTransactionComponent } from './pages/new-transaction/new-transaction.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
 
 const routes: Routes = [
-  { path: 'nova-transacao', component: NovaTransacaoComponent },
-  { path: 'transacoes', component: TransacoesComponent },
+  { path: 'nova-transacao', component: NewTransactionComponent },
+  { path: 'transacoes', component: TransactionsComponent },
 ];
 
 @NgModule({

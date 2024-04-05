@@ -6,8 +6,8 @@ import { NgIconsModule } from '@ng-icons/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NovaTransacaoComponent } from './pages/nova-transacao/nova-transacao.component';
-import { TransacoesComponent } from './pages/transacoes/transacoes.component';
+import { NewTransactionComponent } from './pages/new-transaction/new-transaction.component';
+import { TransactionsComponent } from './pages/transactions/transactions.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
@@ -26,8 +26,8 @@ registerLocaleData(ptBr);
 @NgModule({
   declarations: [
     AppComponent,
-    NovaTransacaoComponent,
-    TransacoesComponent,
+    NewTransactionComponent,
+    TransactionsComponent,
     ButtonComponent,
     TransactionsTableComponent,
     PaginationComponent,

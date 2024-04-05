@@ -5,11 +5,10 @@ import { PaginateInfo } from 'src/types/paginated';
 import { Transaction } from 'src/types/transaction';
 
 @Component({
-  selector: 'app-transacoes',
-  templateUrl: './transacoes.component.html',
-  styleUrls: ['./transacoes.component.css'],
+  selector: 'app-transactions',
+  templateUrl: './transactions.component.html',
 })
-export class TransacoesComponent implements OnInit {
+export class TransactionsComponent implements OnInit {
   page: number;
   perPage: number;
   paginateInfo: PaginateInfo | undefined;

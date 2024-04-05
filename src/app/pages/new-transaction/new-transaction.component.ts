@@ -8,11 +8,10 @@ import {
 import { TransactionService } from '../../services/transaction.service';
 
 @Component({
-  selector: 'app-nova-transacao',
-  templateUrl: './nova-transacao.component.html',
-  styleUrls: ['./nova-transacao.component.css'],
+  selector: 'app-new-transaction',
+  templateUrl: './new-transaction.component.html',
 })
-export class NovaTransacaoComponent implements OnInit {
+export class NewTransactionComponent implements OnInit {
   transactionForm = this.fb.group({
     transactionValue: [0.0, [Validators.required, Validators.min(1)]],
     description: ['', Validators.required],
