@@ -26,6 +26,7 @@ export class TransactionsComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.page = parseInt(params['page'] ?? this.page);
       this.perPage = parseInt(params['per_page'] ?? this.perPage);
+      this.transactions = [];
       this.transaction
         .getTransactions(this.page, this.perPage)
         .subscribe((data) => {
