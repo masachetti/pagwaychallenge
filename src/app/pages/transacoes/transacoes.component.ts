@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TransactionService } from '../transaction.service';
+import { TransactionService } from '../../services/transaction.service';
 import { ActivatedRoute } from '@angular/router';
 import { PaginateInfo } from 'src/types/paginated';
 import { Transaction } from 'src/types/transaction';

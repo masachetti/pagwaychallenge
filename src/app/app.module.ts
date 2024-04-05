@@ -6,12 +6,12 @@ import { NgIconsModule } from '@ng-icons/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NovaTransacaoComponent } from './nova-transacao/nova-transacao.component';
-import { TransacoesComponent } from './transacoes/transacoes.component';
-import { ButtonComponent } from './button/button.component';
-import { TransactionsTableComponent } from './transactions-table/transactions-table.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { NumbersOnlyDirective } from './numbers-only.directive';
+import { NovaTransacaoComponent } from './pages/nova-transacao/nova-transacao.component';
+import { TransacoesComponent } from './pages/transacoes/transacoes.component';
+import { ButtonComponent } from './components/button/button.component';
+import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
 import {
   matChevronLeft as MatChevronLeft,
   matChevronRight as MatChevronRight,
@@ -20,7 +20,7 @@ import {
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
-import { MonetaryInputComponent } from './monetary-input/monetary-input.component';
+import { MonetaryInputComponent } from './components/monetary-input/monetary-input.component';
 registerLocaleData(ptBr);
 
 @NgModule({
