@@ -1,0 +1,58 @@
+<div
+  class="flex h-full w-full top-0 left-0 items-center justify-center bg-gray-100 absolute z-40 opacity-50"
+  *ngIf="status === 'idle'"
+>
+  <div
+    style="border-top-color: transparent"
+    class="w-32 h-32 border-8 border-blue-600 rounded-full animate-spin"
+  ></div>
+</div>
+
+<div
+  class="flex h-full w-full top-0 left-0 items-center justify-center bg-gray-100 absolute z-40"
+  *ngIf="status !== 'idle'"
+>
+  <div
+    class="rounded-lg bg-gray-50 px-16 py-14 flex flex-col items-center gap-3"
+    *ngIf="status === 'success'"
+  >
+    <div class="flex justify-center">
+      <div class="rounded-full bg-green-200 p-6">
+        <div
+          class="flex h-16 w-16 items-center justify-center rounded-full bg-green-500 p-4"
+        >
+          <ng-icon name="MatCheck" class="text-white" size="40"></ng-icon>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="my-4 text-center text-3xl font-semibold text-gray-700">
+      Transação solicitada com sucesso!
+    </h3>
+    <app-button class="bg-green-500 rounded-lg mt-auto">
+      Realizar Outra Transação
+    </app-button>
+  </div>
+  <div
+    class="rounded-lg bg-gray-50 px-16 py-14 flex flex-col items-center gap-3"
+    *ngIf="status === 'error'"
+  >
+    <div class="flex justify-center">
+      <div class="rounded-full bg-red-200 p-6">
+        <div
+          class="flex h-16 w-16 items-center justify-center rounded-full bg-red-500 p-4"
+        >
+          <ng-icon name="MatClose" class="text-white" size="40"></ng-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-4 text-center text-md font-semibold text-gray-700">
+      <p>Ocorreu um erro durante o processamento da transação.</p>
+      <p>Tente novamente ou entre em contato com o nosso suporte.</p>
+    </div>
+    <app-button class="bg-red-500 rounded-lg mt-auto">
+      Tentar novamente
+    </app-button>
+  </div>
+</div>

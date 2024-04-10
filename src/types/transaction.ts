@@ -16,3 +16,5 @@ export interface Recebivel {
   status: 'Pago' | 'Pendente';
   valorLiquido: number;
 }
+
+export type NewTransactionResponseStatus = 'idle' | 'success' | 'error';

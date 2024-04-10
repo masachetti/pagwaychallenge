@@ -15,12 +15,15 @@ import { NumbersOnlyDirective } from './directives/numbers-only.directive';
 import {
   matChevronLeft as MatChevronLeft,
   matChevronRight as MatChevronRight,
+  matCheck as MatCheck,
+  matClose as MatClose,
 } from '@ng-icons/material-icons/baseline';
 
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { MonetaryInputComponent } from './components/monetary-input/monetary-input.component';
+import { NewTransactionStatusModalComponent } from './components/new-transaction-status-modal/new-transaction-status-modal.component';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -33,10 +36,16 @@ registerLocaleData(ptBr);
     PaginationComponent,
     NumbersOnlyDirective,
     MonetaryInputComponent,
+    NewTransactionStatusModalComponent,
   ],
   imports: [
     BrowserModule,
-    NgIconsModule.withIcons({ MatChevronLeft, MatChevronRight }),
+    NgIconsModule.withIcons({
+      MatChevronLeft,
+      MatChevronRight,
+      MatCheck,
+      MatClose,
+    }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
