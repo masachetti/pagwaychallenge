@@ -28,8 +28,7 @@ export class TransactionService {
   newTransaction(transactionData: NewTransaction) {
     if (transactionData.descricao === 'error test') {
       const obs = of({ status: 400, statusText: 'Bad Request' });
-      obs.pipe(delay(1500));
-      return obs;
+      return obs.pipe(delay(1500));
     }
 
     return this.http
