@@ -1,5 +1,5 @@
 <div
-  class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md min-w-1/2"
+  class="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md min-w-1/2 relative"
 >
   <h1 class="text-2xl font-bold text-center mb-4 dark:text-gray-200">
     Nova Transação
@@ -19,7 +19,8 @@
       <div
         class="mt-1"
         *ngIf="
-          transactionValue.invalid && (transactionValue.touched || submitted)
+          transactionValue.invalid &&
+          (transactionValue.touched || userTriedToSubmit)
         "
       >
         <p
@@ -50,7 +51,9 @@
       />
       <div
         class="mt-1"
-        *ngIf="description.invalid && (description.touched || submitted)"
+        *ngIf="
+          description.invalid && (description.touched || userTriedToSubmit)
+        "
       >
         <p class="text-xs text-red-600" *ngIf="description.errors?.required">
           Descrição é obrigatório.
@@ -79,7 +82,7 @@
       />
       <div
         class="mt-1"
-        *ngIf="cardName.invalid && (cardName.touched || submitted)"
+        *ngIf="cardName.invalid && (cardName.touched || userTriedToSubmit)"
       >
         <p class="text-xs text-red-600" *ngIf="cardName.errors?.required">
           Nome do titular é obrigatório.
@@ -104,7 +107,7 @@
       />
       <div
         class="mt-1"
-        *ngIf="cardNumber.invalid && (cardNumber.touched || submitted)"
+        *ngIf="cardNumber.invalid && (cardNumber.touched || userTriedToSubmit)"
       >
         <p class="text-xs text-red-600" *ngIf="cardNumber.errors?.required">
           Número do cartão é obrigatório.
@@ -153,8 +156,8 @@
         <div
           class="mt-1"
           *ngIf="
-            (cardMonth.invalid && (cardMonth.touched || submitted)) ||
-            (cardYear.invalid && (cardYear.touched || submitted))
+            (cardMonth.invalid && (cardMonth.touched || userTriedToSubmit)) ||
+            (cardYear.invalid && (cardYear.touched || userTriedToSubmit))
           "
         >
           <p
@@ -194,7 +197,7 @@
 
         <div
           class="mt-1"
-          *ngIf="cardCode.invalid && (cardCode.touched || submitted)"
+          *ngIf="cardCode.invalid && (cardCode.touched || userTriedToSubmit)"
         >
           <p class="text-xs text-red-600" *ngIf="cardCode.errors?.required">
             CVV é obrigatório.
@@ -217,4 +220,8 @@
       </button>
     </div>
   </form>
+  <app-new-transaction-status-modal
+    *ngIf="submitted"
+    [status]="responseStatus"
+  ></app-new-transaction-status-modal>
 </div>

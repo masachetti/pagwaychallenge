@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { TransactionService } from '../../services/transaction.service';
+import { NewTransactionResponseStatus } from 'src/types/transaction';
 
 @Component({
   selector: 'app-new-transaction',
@@ -31,7 +32,9 @@ export class NewTransactionComponent implements OnInit {
     ],
   });
 
+  userTriedToSubmit = false;
   submitted = false;
+  responseStatus: NewTransactionResponseStatus = 'idle';
 
   get transactionValue() {
     return this.transactionForm.get('transactionValue') as FormControl;
@@ -63,11 +66,12 @@ export class NewTransactionComponent implements OnInit {
   ) {}
 
   onSubmit() {
-    this.submitted = true;
+    this.userTriedToSubmit = true;
     if (this.transactionForm.valid) {
+      this.submitted = true;
       this.transactions
         .newTransaction({
-          valor: this.transactionValue.value,
+          valor: this.transactionValue.value * 100,
           descricao: this.description.value,
           nomePortadorCartao: this.cardName.value,
           codigoSegurancaCartao: this.cardCode.value,
@@ -78,9 +82,11 @@ export class NewTransactionComponent implements OnInit {
         .subscribe((resp) => {
           if (resp.status === 201) {
             console.log('Works!', resp);
+            this.responseStatus = 'success';
           }
           if (resp.status === 400) {
             console.log('Mock error works', resp);
+            this.responseStatus = 'error';
           }
         });
     }
