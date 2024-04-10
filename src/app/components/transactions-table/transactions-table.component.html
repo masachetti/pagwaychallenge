@@ -34,7 +34,7 @@
         <td class="py-4 px-6">{{ transaction.nomePortadorCartao }}</td>
         <td class="py-4 px-6">{{ transaction.numeroCartao }}</td>
         <td class="py-4 px-6">
-          {{ transaction.valor * 100 | currency : "R$" }}
+          {{ transaction.valor / 100 | currency : "R$" }}
         </td>
         <td class="py-4 px-6">
           {{ transaction.descricao }}
@@ -56,7 +56,7 @@
         <td class="py-4 px-6">
           {{
             transaction.recebiveis.length
-              ? (transaction.recebiveis[0].valorLiquido * 100 | currency : "R$")
+              ? (transaction.recebiveis[0].valorLiquido / 100 | currency : "R$")
               : ""
           }}
         </td>
