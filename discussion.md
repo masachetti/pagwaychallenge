@@ -18,7 +18,6 @@
     - Dado obtido por um GET request no endpoint de saldo.
   - Uma tabela contendo a lista de transações.
     - Dado obtido por um GET request no endpoint de transacao.
-    - Cabeçalho da tabela com botão para mudar a ordenação dos itens.
     - Apresentar colunas de:
       - Valor: Representação monetária
       - Descrição: String com mecanismo para visualização de textos grandes.
@@ -27,7 +26,6 @@
       - Status: Pago ou Pendente
       - Data de pagamento do recebivel
       - Valor liquidado: Representação monetária
-    - (?) Colocar algum mecanismo para representar se houve ou nao recebiveis.
   - Paginação.
     - Input tipo select para selecionar quantos itens mostrar por página.
     - Botões de paginação: Primeira pagina, ultima pagina, por númeração, próxima e anterior.
@@ -41,18 +39,22 @@
 Algumas ressalvas serão tomadas para a facilitar e agilizar o processo:
 
 - Mock do Back-End:
-  - Será utilizado a biblioteca JSON-Server para mockar os endpoints do back-end afim de prover um mais realismo ao desafio.
+  - Será utilizado a biblioteca JSON-Server para mockar os endpoints do back-end.
 - Headers e Footers:
-  - Apesar de inseridos na diagramação, penso em não inserir no código final para poder focar mais na resolução do problema.
+  - Apesar de inseridos na diagramação não irei inserir no código final para focar mais na resolução do problema.
 - Página inicial:
   - A página inicial será composta apenas por um componente de navegação afim de encaminhar para as rotas do desafio e tornar mais fácil o acesso.
+- Ordenação dos dados:
 
-Além disso, o desafio será primeiramente feito em Angular 12 para depois ser reescrito em Angular 14.
+
 
 ## Mock do Back-End
 
 Estarei utilizando o JSON-Server para realizar o mock do Back-End. Para tal, criei um arquivo JSON com dados falsos contendo os seguintes dados:
 
+- saldo:
+  - Um objeto contendo os valores `liquidado` e `pendente` representando os respectivos tipos de saldo.
+  - Ambos os valores são dados em centavos.
 - transacoes:
   - Um array especificando as transacoes do cliente.
   - Cada transação possui: `valor`, `descricao`, `nomePortadorCartao`, `numeroCartao`, `validadeCartao`, `codigoSegurancaCartao` e `recebiveis` onde:
@@ -63,6 +65,4 @@ Estarei utilizando o JSON-Server para realizar o mock do Back-End. Para tal, cri
       - `status` pode ser "Pago" ou "Pendente".
       - `dataPagamento` é dado em timestamp.
       - `valorLiquido` é dado em centavos.
-- saldo:
-  - Um objeto contendo `liquidado` e `pendente` representando os respectivos tipos de saldo.
-  - Ambos os valores são dados em centavos.
+
