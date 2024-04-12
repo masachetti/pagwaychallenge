@@ -22,3 +22,5 @@ Para iniciar o projeto basta executar:
 npm start
 ```
 Com isso tanto o `json-server` será inicializado para servir de back-end quanto o `ng serve` para buildar e expor o front-end no endereço http://localhost:4200
+
+*Obs: Caso aconteça algum erro na hora executar o projeto tente utilizar a versão 20.11.0 do NodeJs.*
