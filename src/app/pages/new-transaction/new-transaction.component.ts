@@ -91,4 +91,12 @@ export class NewTransactionComponent implements OnInit {
         });
     }
   }
+
+  resetForm() {
+    this.submitted = false;
+    this.userTriedToSubmit = false;
+    this.responseStatus = 'idle';
+    this.transactionForm.reset();
+    this.transactionForm.get('transactionValue')?.setValue(0);
+  }
 }

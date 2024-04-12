@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NewTransactionResponseStatus } from 'src/types/transaction';
 
 @Component({
@@ -8,6 +8,7 @@ import { NewTransactionResponseStatus } from 'src/types/transaction';
 })
 export class NewTransactionStatusModalComponent implements OnInit {
   @Input() status: NewTransactionResponseStatus = 'idle';
+  @Output() reset = new EventEmitter();
 
   constructor() {}
 
