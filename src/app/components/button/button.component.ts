@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
 import { CS } from 'src/utils/cs';
 
 @Component({
@@ -7,12 +14,11 @@ import { CS } from 'src/utils/cs';
 })
 export class ButtonComponent extends CS implements OnInit {
   @Input() class = '';
+  @Output() click = new EventEmitter();
 
   constructor() {
     super();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
