@@ -69,6 +69,7 @@ export class NewTransactionComponent implements OnInit {
     this.userTriedToSubmit = true;
     if (this.transactionForm.valid) {
       this.submitted = true;
+
       this.transactions
         .newTransaction({
           valor: this.transactionValue.value * 100,
@@ -77,7 +78,7 @@ export class NewTransactionComponent implements OnInit {
           codigoSegurancaCartao: this.cardCode.value,
           numeroCartao: this.cardNumber.value,
           validadeCartao: `${this.cardMonth.value}/${this.cardYear.value}`,
-          recebiveis: [],
+          dataTransacao: ~~(new Date().getTime() / 1000),
         })
         .subscribe((resp) => {
           if (resp.status === 201) {

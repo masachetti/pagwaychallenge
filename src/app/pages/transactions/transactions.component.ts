@@ -5,6 +5,7 @@ import { PaginateInfo } from 'src/types/paginated';
 import { Transaction } from 'src/types/transaction';
 import { Balance } from 'src/types/balance';
 import { BalanceService } from 'src/app/services/balance.service';
+import { HowToSort } from 'src/types/sorting';
 
 @Component({
   selector: 'app-transactions',
@@ -16,6 +17,7 @@ export class TransactionsComponent implements OnInit {
   paginateInfo: PaginateInfo | undefined;
   transactionsData: Array<Transaction> = [];
   balanceData: Balance | undefined;
+  sort: HowToSort = [null, null];
 
   constructor(
     private transaction: TransactionService,
@@ -26,6 +28,10 @@ export class TransactionsComponent implements OnInit {
     this.perPage = 10;
   }
 
+  changeSort(newSort: HowToSort) {
+    this.sort = newSort;
+  }
+
   ngOnInit(): void {
     this.balance.getBalance().subscribe((data) => (this.balanceData = data));
     this.route.queryParams.subscribe((params) => {
@@ -33,7 +39,7 @@ export class TransactionsComponent implements OnInit {
       this.perPage = parseInt(params['per_page'] ?? this.perPage);
       this.transactionsData = [];
       this.transaction
-        .getTransactions(this.page, this.perPage)
+        .getTransactions(this.page, this.perPage, this.sort)
         .subscribe((data) => {
           const { data: _data, ..._paginateInfo } = data;
           this.transactionsData = _data;

@@ -1,20 +1,35 @@
-export interface Transaction {
+export type Transaction = {
   valor: number;
-  numeroCartao: number;
-  nomePortadorCartao: string;
   descricao: string;
-  id: string;
-  recebiveis: Array<Recebivel>;
-  codigoSegurancaCartao: number;
+  nomePortadorCartao: string;
+  numeroCartao: string;
   validadeCartao: string;
+  codigoSegurancaCartao: number;
+  dataTransacao: number;
+  id: number;
+} & (HasReceivable | WithoutReceivable);
+
+interface HasReceivable {
+  possuiRecebivel: true;
+  statusRecebivel: 'Pago' | 'Pendente';
+  dataPagamentoRecebivel: number;
+  valorRecebivel: number;
 }
 
-export type NewTransaction = Omit<Transaction, 'id'>;
-
-export interface Recebivel {
-  dataPagamento: number;
-  status: 'Pago' | 'Pendente';
-  valorLiquido: number;
+interface WithoutReceivable {
+  possuiRecebivel: false;
+  statusRecebivel: null;
+  dataPagamentoRecebivel: null;
+  valorRecebivel: null;
 }
+
+export type NewTransaction = Omit<
+  Transaction,
+  | 'id'
+  | 'possuiRecebivel'
+  | 'statusRecebivel'
+  | 'dataPagamentoRecebivel'
+  | 'valorRecebivel'
+>;
 
 export type NewTransactionResponseStatus = 'idle' | 'success' | 'error';

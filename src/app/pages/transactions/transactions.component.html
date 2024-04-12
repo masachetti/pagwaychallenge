@@ -50,6 +50,7 @@
     <app-transactions-table
       *ngIf="transactionsData.length"
       [transactions]="transactionsData"
+      (sort)="changeSort($event)"
     ></app-transactions-table>
     <app-pagination
       *ngIf="transactionsData.length"

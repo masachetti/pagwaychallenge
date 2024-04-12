@@ -17,6 +17,7 @@ import {
   matChevronRight as MatChevronRight,
   matCheck as MatCheck,
   matClose as MatClose,
+  matArrowDropDown as MatArrowDropDown,
 } from '@ng-icons/material-icons/baseline';
 
 import { LOCALE_ID } from '@angular/core';
@@ -45,6 +46,7 @@ registerLocaleData(ptBr);
       MatChevronRight,
       MatCheck,
       MatClose,
+      MatArrowDropDown,
     }),
     AppRoutingModule,
     HttpClientModule,
