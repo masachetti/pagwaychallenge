@@ -3,6 +3,8 @@ import { TransactionService } from '../../services/transaction.service';
 import { ActivatedRoute } from '@angular/router';
 import { PaginateInfo } from 'src/types/paginated';
 import { Transaction } from 'src/types/transaction';
+import { Balance } from 'src/types/balance';
+import { BalanceService } from 'src/app/services/balance.service';
 
 @Component({
   selector: 'app-transactions',
@@ -13,16 +15,19 @@ export class TransactionsComponent implements OnInit {
   perPage: number;
   paginateInfo: PaginateInfo | undefined;
   transactions: Array<Transaction> = [];
+  balanceData: Balance | undefined;
 
   constructor(
     private transaction: TransactionService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private balance: BalanceService
   ) {
     this.page = 1;
     this.perPage = 10;
   }
 
   ngOnInit(): void {
+    this.balance.getBalance().subscribe((data) => (this.balanceData = data));
     this.route.queryParams.subscribe((params) => {
       this.page = parseInt(params['page'] ?? this.page);
       this.perPage = parseInt(params['per_page'] ?? this.perPage);
