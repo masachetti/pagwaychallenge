@@ -14,7 +14,7 @@ export class TransactionsComponent implements OnInit {
   page: number;
   perPage: number;
   paginateInfo: PaginateInfo | undefined;
-  transactions: Array<Transaction> = [];
+  transactionsData: Array<Transaction> = [];
   balanceData: Balance | undefined;
 
   constructor(
@@ -31,12 +31,12 @@ export class TransactionsComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.page = parseInt(params['page'] ?? this.page);
       this.perPage = parseInt(params['per_page'] ?? this.perPage);
-      this.transactions = [];
+      this.transactionsData = [];
       this.transaction
         .getTransactions(this.page, this.perPage)
         .subscribe((data) => {
           const { data: _data, ..._paginateInfo } = data;
-          this.transactions = _data;
+          this.transactionsData = _data;
           this.paginateInfo = _paginateInfo;
         });
     });

@@ -17,23 +17,22 @@ export class PaginationComponent extends CS implements OnChanges {
   shouldRenderFirstButton = false;
   shouldRenderLastButton = false;
 
-  perPageOptions: Array<number> = [100, 50, 30, 10];
+  perPageOptions: Array<number> = [10, 30, 50, 100];
 
   constructor(private router: Router) {
     super();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     if ('paginateInfo' in changes) {
       const info = changes['paginateInfo'].currentValue as PaginateInfo;
       if (info) {
         const currentPage = this.pageNumber ?? 1;
         this.pages = [];
         Array.from({ length: 5 }, (_, i) => i - 2).forEach((v) => {
-          const pNumber = currentPage + v;
-          if (pNumber >= info.first && pNumber <= info.last) {
-            this.pages.push(pNumber);
+          const _pageNumber = currentPage + v;
+          if (_pageNumber >= info.first && _pageNumber <= info.last) {
+            this.pages.push(_pageNumber);
           }
         });
 

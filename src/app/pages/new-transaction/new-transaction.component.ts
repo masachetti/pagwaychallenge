@@ -81,11 +81,9 @@ export class NewTransactionComponent implements OnInit {
         })
         .subscribe((resp) => {
           if (resp.status === 201) {
-            console.log('Works!', resp);
             this.responseStatus = 'success';
           }
           if (resp.status === 400) {
-            console.log('Mock error works', resp);
             this.responseStatus = 'error';
           }
         });

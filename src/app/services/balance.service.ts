@@ -7,12 +7,11 @@ import { Balance } from 'src/types/balance';
   providedIn: 'root',
 })
 export class BalanceService {
-  baseUrl = 'http://localhost:3000/';
-  balanceUrl = this.baseUrl + 'saldo';
+  baseUrl = 'http://localhost:3000/saldo';
 
   constructor(private http: HttpClient) {}
 
   getBalance() {
-    return this.http.get<Balance>(this.balanceUrl).pipe(delay(500));
+    return this.http.get<Balance>(this.baseUrl).pipe(delay(500));
   }
 }

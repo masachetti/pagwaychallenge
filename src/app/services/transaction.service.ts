@@ -9,14 +9,13 @@ import { NewTransaction, Transaction } from 'src/types/transaction';
   providedIn: 'root',
 })
 export class TransactionService {
-  baseUrl = 'http://localhost:3000/';
-  transcationsUrl = this.baseUrl + 'transacoes';
+  baseUrl = 'http://localhost:3000/transacoes';
 
   constructor(private http: HttpClient) {}
 
   getTransactions(page: number, itemsByPage: number = 10) {
     return this.http
-      .get<Paginated<Transaction>>(this.transcationsUrl, {
+      .get<Paginated<Transaction>>(this.baseUrl, {
         params: {
           _page: page,
           _per_page: itemsByPage,
@@ -32,7 +31,7 @@ export class TransactionService {
     }
 
     return this.http
-      .post(this.transcationsUrl, transactionData, {
+      .post(this.baseUrl, transactionData, {
         headers: {
           'Content-Type': 'application/json',
         },
