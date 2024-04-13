@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { HowToSort } from 'src/types/sorting';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Transaction } from 'src/types/transaction';
 
 @Component({
@@ -9,32 +9,36 @@ import { Transaction } from 'src/types/transaction';
 })
 export class TransactionsTableComponent implements OnInit {
   @Input() transactions: Array<Transaction> = [];
-  @Output() sort = new EventEmitter<HowToSort>();
+  @Input() currentSort: string = '';
 
-  howToSort: HowToSort = [null, null];
+  private currentSortVariable = '';
+  private currentSortOrder = 'asc';
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.currentSortVariable = this.currentSort.slice(
+      this.currentSort.startsWith('-') ? 1 : 0
+    );
+    this.currentSortOrder = this.currentSort.startsWith('-') ? 'desc' : 'asc';
+  }
 
   changeSort(variable: string) {
-    console.log(this.howToSort);
-    if (this.howToSort[0] === variable) {
-      switch (this.howToSort[1]) {
-        case 'asc':
-          this.howToSort[1] = 'desc';
-          break;
-        case 'desc':
-          this.howToSort = [null, null];
-          break;
-      }
-      this.sort.emit(this.howToSort);
-      return;
+    let nextSort = variable;
+    if (variable === this.currentSortVariable) {
+      if (this.currentSortOrder === 'desc') nextSort = '';
+      else nextSort = '-' + variable;
     }
-    this.howToSort = [variable, 'asc'];
-    this.sort.emit(this.howToSort);
+    this.router.navigate(['/transacoes'], {
+      queryParams: { sort: nextSort },
+      queryParamsHandling: 'merge',
+    });
   }
 
   shouldRenderArrow(variable: string, sortOrder: 'asc' | 'desc') {
-    return this.howToSort[0] !== variable || this.howToSort[1] === sortOrder;
+    return (
+      this.currentSortVariable !== variable ||
+      this.currentSortOrder === sortOrder
+    );
   }
 }

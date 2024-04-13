@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { from, of } from 'rxjs';
 import { delay } from 'rxjs/internal/operators';
 import { Paginated } from 'src/types/paginated';
-import { HowToSort } from 'src/types/sorting';
 import { NewTransaction, Transaction } from 'src/types/transaction';
 
 @Injectable({
@@ -17,18 +16,22 @@ export class TransactionService {
   getTransactions(
     page: number,
     itemsByPage: number = 10,
-    sort: HowToSort = [null, null]
+    sort: string,
+    filter: number
   ) {
-    let sortParam = '-dataTransacao';
-    if (sort[0]) {
-      sortParam = (sort[1] === 'desc' ? '-' : '') + sort[0];
-    }
+    let sortParam = sort ? sort : '-dataTransacao';
+    const filterParams: Record<string, number | string> = {};
+    if (filter === 2) filterParams.possuiRecebivel = 0;
+    if (filter > 2) filterParams.possuiRecebivel = 1;
+    if (filter === 4) filterParams.statusRecebivel = 'Pago';
+    if (filter === 5) filterParams.statusRecebivel = 'Pendente';
     return this.http
       .get<Paginated<Transaction>>(this.baseUrl, {
         params: {
           _page: page,
           _per_page: itemsByPage,
           _sort: sortParam,
+          ...filterParams,
         },
       })
       .pipe(delay(500));

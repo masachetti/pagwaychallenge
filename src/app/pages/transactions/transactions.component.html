@@ -1,62 +1,46 @@
 <div class="flex flex-col gap-5 h-full">
   <div class="flex gap-10 w-full justify-around">
     <div class="bg-gray-50 flex flex-col rounded-lg px-10 py-2 shadow-md">
-      <span class="text-lg font-bold text-gray-600 uppercase -ml-7"
-        >Saldo Liquidado</span
-      >
+      <span class="text-lg font-bold text-gray-600 uppercase -ml-7">Saldo Liquidado</span>
       <div class="flex justify-center items-center my-6">
-        <div
-          style="border-top-color: transparent"
-          *ngIf="!balanceData"
-          class="w-16 h-16 border-4 border-blue-600 rounded-full animate-spin"
-        ></div>
-        <span
-          *ngIf="balanceData"
-          class="text-4xl text-green-600 font-bold tracking-wide"
-        >
+        <div style="border-top-color: transparent" *ngIf="!balanceData"
+          class="w-16 h-16 border-4 border-blue-600 rounded-full animate-spin"></div>
+        <span *ngIf="balanceData" class="text-4xl text-green-600 font-bold tracking-wide">
           {{ balanceData.liquidado / 100 | currency : "R$" }}
         </span>
       </div>
     </div>
     <div class="bg-gray-50 flex flex-col rounded-lg px-10 py-2 shadow-md">
-      <span class="text-lg font-bold text-gray-600 uppercase -ml-7"
-        >Saldo Pendente</span
-      >
+      <span class="text-lg font-bold text-gray-600 uppercase -ml-7">Saldo Pendente</span>
       <div class="flex justify-center items-center my-6">
-        <div
-          style="border-top-color: transparent"
-          *ngIf="!balanceData"
-          class="w-16 h-16 border-4 border-blue-600 rounded-full animate-spin"
-        ></div>
-        <span
-          *ngIf="balanceData"
-          class="text-4xl text-blue-600 font-bold tracking-wide"
-        >
+        <div style="border-top-color: transparent" *ngIf="!balanceData"
+          class="w-16 h-16 border-4 border-blue-600 rounded-full animate-spin"></div>
+        <span *ngIf="balanceData" class="text-4xl text-blue-600 font-bold tracking-wide">
           {{ balanceData.pendente / 100 | currency : "R$" }}
         </span>
       </div>
     </div>
   </div>
+  <div class="w-full flex justify-end items-center gap-5 px-4">
+    <label for="filter-select" class="text-lg font-bold text-gray-700">Mostrar: </label>
+    <select
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
+      name="filter-select" id="filter-select" #select (change)="changeFilter(select.value)">
+      <option value="1" [selected]="filter === 1">Todos</option>
+      <option value="2" [selected]="filter === 2">Apenas sem recebiveis</option>
+      <option value="3" [selected]="filter === 3">Apenas com recebiveis</option>
+      <option value="4" [selected]="filter === 4">Apenas com recebiveis pagos</option>
+      <option value="5" [selected]="filter === 5">Apenas com recebiveis pendentes</option>
+    </select>
+  </div>
   <div class="flex flex-col gap-10">
-    <div
-      class="w-full h-full flex justify-center items-center"
-      *ngIf="!transactionsData.length"
-    >
-      <div
-        style="border-top-color: transparent"
-        class="w-32 h-32 border-8 border-blue-600 rounded-full animate-spin"
-      ></div>
+    <div class="w-full h-full flex justify-center items-center" *ngIf="!transactionsData.length">
+      <div style="border-top-color: transparent" class="w-32 h-32 border-8 border-blue-600 rounded-full animate-spin">
+      </div>
     </div>
-    <app-transactions-table
-      *ngIf="transactionsData.length"
-      [transactions]="transactionsData"
-      (sort)="changeSort($event)"
-    ></app-transactions-table>
-    <app-pagination
-      *ngIf="transactionsData.length"
-      [paginateInfo]="paginateInfo"
-      [pageNumber]="page"
-      [perPage]="perPage"
-    ></app-pagination>
+    <app-transactions-table *ngIf="transactionsData.length" [transactions]="transactionsData"
+      [currentSort]="sort"></app-transactions-table>
+    <app-pagination *ngIf="transactionsData.length" [paginateInfo]="paginateInfo" [pageNumber]="page"
+      [perPage]="perPage"></app-pagination>
   </div>
 </div>
