@@ -41,7 +41,11 @@ casual.define("transacao", function () {
   };
 });
 
-const transacoes = {
+const json = {
+  saldo: {
+    liquidado: casual.integer(100, 99999) * 100,
+    pendente: casual.integer(100, 99999) * 100
+  },
     transacoes: []
 }
 for (let i = 1; i<=500 ; i++){
@@ -50,6 +54,6 @@ for (let i = 1; i<=500 ; i++){
         id: i
     })
 }
-const result = JSON.stringify(transacoes)
+const result = JSON.stringify(json)
 
 fs.writeFile('db3.json', result, (err) => console.log(err))
