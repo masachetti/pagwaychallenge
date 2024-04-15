@@ -26,6 +26,8 @@
       - Status: Pago ou Pendente
       - Data de pagamento do recebivel
       - Valor liquidado: Representação monetária
+    - Botões nos headers para ordenação da tabela
+    - Feature para filtragem dos dados
   - Paginação.
     - Input tipo select para selecionar quantos itens mostrar por página.
     - Botões de paginação: Primeira pagina, ultima pagina, por númeração, próxima e anterior.
@@ -44,9 +46,8 @@ Algumas ressalvas serão tomadas para a facilitar e agilizar o processo:
   - Apesar de inseridos na diagramação não irei inserir no código final para focar mais na resolução do problema.
 - Página inicial:
   - A página inicial será composta apenas por um componente de navegação afim de encaminhar para as rotas do desafio e tornar mais fácil o acesso.
-- Ordenação dos dados:
-
-
+- Service da api:
+  - Os dois services criados para lidar com as chamadas da API possuem código para simular comportamentos de mundo real.
 
 ## Mock do Back-End
 
@@ -57,12 +58,22 @@ Estarei utilizando o JSON-Server para realizar o mock do Back-End. Para tal, cri
   - Ambos os valores são dados em centavos.
 - transacoes:
   - Um array especificando as transacoes do cliente.
-  - Cada transação possui: `valor`, `descricao`, `nomePortadorCartao`, `numeroCartao`, `validadeCartao`, `codigoSegurancaCartao` e `recebiveis` onde:
-    - `valor` é dado em centavos
-    - `numeroCartao` representa são apenas os 4 últimos digitos do cartão
-    - `validadeCartao` é dado no formato MM/YYYY
-    - `recebiveis` é um array vazio ou de tamanho 1 contendo `status`, `dataPagamento` e `valorLiquido` onde:
-      - `status` pode ser "Pago" ou "Pendente".
-      - `dataPagamento` é dado em timestamp.
-      - `valorLiquido` é dado em centavos.
+  - Cada transação possui as seguintes variáveis:
+    - `valor`, dado em centavos
+    - `numeroCartao`
+    - `nomePortadorCartao`
+    - `validadeCartao`, dado no formato MM/YYYY
+    - `codigoSegurancaCartao`, número de 3 digitos
+    - `dataTransacao`, timestamp para ordenação dos dados
+    - `possuiRecebivel`, determina se a transação há recebível. No caso de `false` as próximas variáveis (referentes ao recebível) terão valor `null`.
+    - `statusRecebivel`, string contendo "Pago" ou "Pendente". `null` se `possuiRecebivel` igual a false.
+    - `dataPagamentoRecebivel`, dado em timestamp. `null` se `possuiRecebivel` igual a false.
+    - `valorRecebivel`, dado em centavos. `null` se `possuiRecebivel` igual a false.
 
+## Service
+
+Nos services foram adicionado funções para simular comportamentos de mundo real.
+
+- Em ambos os services (`balance` e `transacation`) todas as chamadas de API utilizam um pipe para criar um delay fictício.
+- No service `transaction` há um criação de dados falsos e aleatorios sobre o recebível.
+- E, neste mesmo service, há também um retono de erro no POST Request de criação de nova transação quando a descrição for igual a `error test`. Apenas com o intuito de simular um problema na chamada da API e visualizar a mensagem de erro no app.
